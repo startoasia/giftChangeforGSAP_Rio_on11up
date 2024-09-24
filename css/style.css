@@ -1,0 +1,971 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Noto Sans TC", sans-serif;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    margin: 0;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    margin: 0 auto;
+    z-index: 999;
+    max-width: 1000px;
+    width: 100%;
+    box-shadow: 0px 2px 5px #444444;
+}
+
+.timebox {
+    background: #AE0603;
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.timer {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    color: #fff;
+    height: 55px;
+    line-height: 55px;
+    font-family: Arial;
+    text-shadow: 1px 1px 2px #454545;
+    letter-spacing: 4px;
+}
+
+.mb {
+    display: none;
+}
+
+.pc {
+    display: inline-block;
+}
+
+@media (max-width:768px) {
+    .mb {
+        display: block;
+    }
+
+    .pc {
+        display: none;
+    }
+
+    .timer {
+        box-sizing: content-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        line-height: 1.25;
+        font-size: 21px;
+        letter-spacing: 3px;
+        padding: 4px 0;
+    }
+}
+
+.nav_bar {
+    width: 100%;
+    position: relative;
+    height: 70px;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    pointer-events: none;
+    background: #042C84;
+}
+
+.nav_logo {
+    width: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.nav_bar .nav_icon_box {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    cursor: pointer;
+    z-index: 99;
+    pointer-events: fill;
+    background: #042C84;
+}
+
+.nav_bar .nav_icon_box .nav_icon {
+    position: absolute;
+    width: 60%;
+    height: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.nav_bar .nav_icon span:nth-child(1) {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 15%;
+    color: #fff;
+    background: #fff;
+    border-radius: 20px;
+    transform-origin: left center;
+    transition: all 0.2s;
+}
+
+.nav_bar .nav_icon span:nth-child(2) {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0%;
+    width: 100%;
+    height: 15%;
+    color: #fff;
+    background: #fff;
+    border-radius: 20px;
+    transition: all 0.2s;
+}
+
+.nav_bar .nav_icon span:nth-child(3) {
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    width: 100%;
+    height: 15%;
+    color: #fff;
+    background: #fff;
+    border-radius: 20px;
+    transform-origin: left center;
+    transition: all 0.2s;
+}
+
+.nav_icon.open span:nth-child(1) {
+    left: 15%;
+    transform: rotate(45deg);
+}
+
+.nav_icon.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav_icon.open span:nth-child(3) {
+    left: 15%;
+    transform: rotate(-45deg);
+}
+
+.nav_list {
+    width: 100%;
+    position: fixed;
+    top: 100%;
+    left: 0%;
+    color: #fff;
+    background: #2c51a1;
+    text-align: center;
+    max-height: 0;
+    transition: max-height 0.5s;
+    overflow: hidden;
+    z-index: 9;
+    font-size: 28px;
+    font-weight: 600;
+    pointer-events: fill;
+}
+
+.nav_list a {
+    display: inline-block;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+    /*   padding: 1% 0; */
+    border-bottom: 1px solid #fff;
+    transition: all .3s;
+}
+
+.nav_list a:last-child {
+    border: none;
+}
+
+.nav_list a:hover {
+    scale: 1.1;
+    color: #fff34e;
+}
+
+@media (max-width:576px) {
+
+    /* .nav_bar .nav_icon_box {
+        top: 10%;
+    } */
+    .nav_bar {
+        height: 55px;
+    }
+
+    .nav_logo {
+        width: 150px;
+    }
+
+    .nav_bar .nav_list {
+        font-size: 22px;
+    }
+
+    .nav_list a {
+        height: 45px;
+    }
+}
+
+@media (max-width:375px) {
+    /* .nav_bar .nav_icon_box {
+        top: 12%;
+    } */
+}
+
+.wrapper {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.content {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.bg {
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.s1-1 {
+    width: 65.3%;
+    position: absolute;
+    top: 25.5%;
+    left: 0%;
+}
+
+.s1-2 {
+    width: 33.3%;
+    position: absolute;
+    top: 21.5%;
+    left: 0%;
+    mix-blend-mode: screen;
+}
+
+.s1-3 {
+    width: 25.3%;
+    position: absolute;
+    top: 25%;
+    left: 32.5%;
+    mix-blend-mode: screen;
+}
+
+.s1-4 {
+    width: 100%;
+    position: absolute;
+    top: 19.5%;
+    left: 0%;
+    mix-blend-mode: screen;
+}
+
+.s1-5 {
+    width: 58%;
+    position: absolute;
+    top: 13.5%;
+    right: 0%;
+}
+
+.s1-6 {
+    width: 100%;
+    position: absolute;
+    top: 1.5%;
+    left: 0%;
+}
+
+.s1-7 {
+    width: 44.3%;
+    position: absolute;
+    top: -1%;
+    left: 0%;
+    mix-blend-mode: screen;
+}
+
+.s1-8 {
+    width: 24.9%;
+    position: absolute;
+    top: -1%;
+    right: 0%;
+    mix-blend-mode: screen;
+}
+
+.s1-9 {
+    width: 87.9%;
+    position: absolute;
+    top: 44.7%;
+    left: 4%;
+}
+
+.s1-10 {
+    width: 36.7%;
+    position: absolute;
+    top: 43%;
+    left: -.5%;
+}
+
+.s1-11 {
+    width: 31.9%;
+    position: absolute;
+    top: 47.5%;
+    left: 25.8%;
+    mix-blend-mode: screen;
+}
+
+.s1-12 {
+    width: 16.8%;
+    position: absolute;
+    top: 50.3%;
+    right: 4%;
+}
+
+.s1-13 {
+    width: 40.7%;
+    position: absolute;
+    top: 71.5%;
+    left: 2%;
+}
+
+.s1-14 {
+    width: 47.8%;
+    position: absolute;
+    top: 71%;
+    left: 0%;
+    mix-blend-mode: screen;
+}
+
+.s1-15 {
+    width: 24.9%;
+    position: absolute;
+    top: 78%;
+    left: 1%;
+}
+
+.s1-16 {
+    width: 34.7%;
+    position: absolute;
+    top: 78.5%;
+    left: 6.5%;
+}
+
+.s1-17 {
+    width: 58.5%;
+    position: absolute;
+    top: 72.1%;
+    right: 1%;
+}
+
+.s1-18 {
+    width: 56.6%;
+    position: absolute;
+    top: 70.6%;
+    right: 11%;
+    mix-blend-mode: screen;
+}
+
+.s1-19 {
+    width: 36.9%;
+    position: absolute;
+    top: 77.5%;
+    right: -1%;
+}
+
+.s1-20 {
+    width: 100%;
+    position: absolute;
+    top: 1%;
+    left: 0%;
+    pointer-events: none;
+}
+
+.s2-1 {
+    width: 90%;
+    position: absolute;
+    top: 1%;
+    left: 4%;
+}
+
+.s2-videobox {
+    width: 86%;
+    height: 39%;
+    position: absolute;
+    top: 1.5%;
+    left: 7.3%;
+}
+
+.s3-1 {
+    width: 88.6%;
+    position: absolute;
+    top: 45%;
+    left: 1.3%;
+    mix-blend-mode: multiply;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.s3-2 {
+    width: 64.5%;
+    position: absolute;
+    top: 8.3%;
+    left: 1.5%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.s3-3 {
+    width: 33.4%;
+    position: absolute;
+    top: 11%;
+    left: 0%;
+    mix-blend-mode: screen;
+}
+
+.s3-videobox {
+    width: 86%;
+    height: 39%;
+    position: absolute;
+    bottom: 9.5%;
+    left: 7.3%;
+}
+
+/* .s4-marquee .swiper-wrapper {
+    width: 140.7%;
+    transition-timing-function: linear;
+} */
+
+
+.s4-1 {
+    width: 62.8%;
+    position: absolute;
+    top: 41.7%;
+    right: 0%;
+    mix-blend-mode: multiply;
+}
+
+.s4-2 {
+    width: 98.4%;
+    position: absolute;
+    top: 22%;
+    right: 0%;
+}
+
+.s4-3 {
+    width: 45.4%;
+    position: absolute;
+    top: 25%;
+    right: 3%;
+    mix-blend-mode: screen;
+}
+
+.s4-4 {
+    width: 84.6%;
+    position: absolute;
+    top: 64.9%;
+    left: 0%;
+    mix-blend-mode: multiply;
+}
+
+.s4-5 {
+    width: 100%;
+    position: absolute;
+    top: 45.7%;
+    left: 0%;
+}
+
+.s4-6 {
+    width: 45.4%;
+    position: absolute;
+    top: 48.8%;
+    left: 0%;
+    mix-blend-mode: screen;
+}
+
+.s4-7 {
+    width: 60.7%;
+    position: absolute;
+    top: 90%;
+    right: 0%;
+    mix-blend-mode: multiply;
+}
+
+.s4-8 {
+    width: 100%;
+    position: absolute;
+    top: 69.6%;
+    left: 0%;
+}
+
+.s4-9 {
+    width: 25.9%;
+    position: absolute;
+    top: 76.4%;
+    right: 0%;
+    mix-blend-mode: screen;
+}
+
+.s5-1 {
+    width: 25.3%;
+    position: absolute;
+    top: 23.6%;
+    right: 28.5%;
+}
+
+.s5-2 {
+    width: 96.5%;
+    position: absolute;
+    top: 42.7%;
+    left: 2%;
+}
+
+.s5-3 {
+    width: 38.9%;
+    position: absolute;
+    top: 41.3%;
+    right: -5%;
+    z-index: 9;
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.gifeControl {
+    width: 96.5%;
+    height: 30%;
+    position: absolute;
+    left: 1.75%;
+    bottom: 26.5%;
+    overflow: hidden;
+}
+
+.gift02,
+.gift03 {
+    transform: translate(100%, 0%);
+}
+
+.giftImage {
+    transform: translate(-100%, 0%);
+    position: relative;
+}
+
+.gift-thing01-1 {
+    width: 56.3%;
+    left: 44%;
+    bottom: -22%;
+}
+
+.s5-btn {
+    width: 26.7%;
+    position: absolute;
+    top: 81.8%;
+    left: 37%;
+}
+
+.s6-1 {
+    width: 34%;
+    position: absolute;
+    top: 7.3%;
+    left: 0%;
+    mix-blend-mode: screen;
+}
+
+.s6-2 {
+    width: 24.9%;
+    position: absolute;
+    top: 9.5%;
+    right: 0%;
+    mix-blend-mode: screen;
+}
+
+.s6-3 {
+    width: 35.8%;
+    position: absolute;
+    top: 26.2%;
+    left: 0%;
+    mix-blend-mode: screen;
+}
+
+.s6-4 {
+    width: 47%;
+    position: absolute;
+    top: 38.5%;
+    left: 28%;
+    mix-blend-mode: screen;
+}
+
+.s6-btn {
+    width: 85.6%;
+    position: absolute;
+    top: 84.5%;
+    left: 7%;
+}
+
+.s7-1 {
+    width: 23.1%;
+    position: absolute;
+    top: 20.5%;
+    left: 22.8%;
+}
+
+.s7-2 {
+    width: 44.9%;
+    position: absolute;
+    top: 58%;
+    left: 0%;
+}
+
+.s7-3 {
+    width: 53.8%;
+    position: absolute;
+    top: 43.5%;
+    left: 14%;
+}
+
+.s7-4 {
+    width: 49.4%;
+    position: absolute;
+    top: 48%;
+    right: 0%;
+}
+
+.s7-5 {
+    width: 67.5%;
+    position: absolute;
+    top: 66.5%;
+    left: 20%;
+}
+
+.s7-6 {
+    width: 57.7%;
+    position: absolute;
+    top: 69%;
+    left: 0%;
+    mix-blend-mode: screen;
+}
+
+.s7-7 {
+    width: 57.7%;
+    position: absolute;
+    top: 63.3%;
+    right: 0%;
+    transform-origin: left bottom;
+}
+
+.s8-1 {
+    width: 97.2%;
+    position: absolute;
+    top: 0.5%;
+    left: 2%;
+    z-index: 2;
+}
+
+.s8-2 {
+    width: 43.6%;
+    position: absolute;
+    top: 12.5%;
+    left: 10%;
+    z-index: 4;
+}
+
+.s8-3 {
+    width: 43.6%;
+    position: absolute;
+    top: 12.5%;
+    right: 10%;
+    z-index: 3;
+}
+
+.s8-4 {
+    width: 8.6%;
+    position: absolute;
+    top: 21.5%;
+    left: 46.5%;
+    z-index: 5;
+}
+
+.s8-5 {
+    width: 99.9%;
+    position: absolute;
+    top: 28.5%;
+    left: 0%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.s8-6 {
+    width: 57.1%;
+    position: absolute;
+    top: 81.5%;
+    left: 33.5%;
+}
+
+.s8-videobox {
+    width: 91.5%;
+    height: 25.2%;
+    position: absolute;
+    top: 50.4%;
+    left: 4.3%;
+}
+
+.s9-1 {
+    width: 21%;
+    position: absolute;
+    top: 18.5%;
+    left: 22.7%;
+}
+
+.s9-2 {
+    width: 48.7%;
+    position: absolute;
+    top: 48.5%;
+    left: 0%;
+}
+
+.s9-3 {
+    width: 59%;
+    position: absolute;
+    top: 34.5%;
+    left: 8.5%;
+}
+
+.s9-4 {
+    width: 52.1%;
+    position: absolute;
+    top: 38.4%;
+    right: 0%;
+}
+
+.s9-5 {
+    width: 65.6%;
+    position: absolute;
+    top: 58.5%;
+    left: 20%;
+}
+
+.s9-6 {
+    width: 55.1%;
+    position: absolute;
+    top: 53%;
+    right: 0%;
+}
+
+.s9-7 {
+    width: 92.5%;
+    position: absolute;
+    bottom: 6.1%;
+    left: 4%;
+}
+
+.s12-1 {
+    width: 24.5%;
+    position: absolute;
+    top: 11.5%;
+    right: 18.2%;
+}
+
+.s12-2 {
+    width: 28.8%;
+    position: absolute;
+    top: 47%;
+    right: 15%;
+}
+
+
+
+
+.s15-slide {
+    width: 44%;
+    position: absolute;
+    top: 14.5%;
+    left: 28%;
+    overflow: hidden;
+}
+
+.bg15 .swiper-slide {
+    display: flex;
+    justify-content: center;
+}
+
+.bg15 .swiper-slide video {
+    width: 100%;
+}
+
+.bg15 .slideNext,
+.bg15 .slidePrev {
+    width: 9.1%;
+    position: absolute;
+    top: 41.6%;
+    cursor: pointer;
+}
+
+.bg15 .slidePrev {
+    left: 1.1%;
+}
+
+.bg15 .slideNext {
+    right: 2.3%;
+}
+
+
+.slidePagination {
+    position: absolute;
+    top: 65.5% !important;
+    height: 12px;
+}
+
+.swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background: #000;
+    opacity: .7;
+    margin: 0 6px !important;
+}
+
+.swiper-pagination-bullet-active {
+    scale: 1.4;
+    background: #ff4f6c;
+    opacity: 1;
+}
+
+@media (max-width:576px) {
+    .slidePagination {
+        position: absolute;
+        top: 62.5% !important;
+    }
+
+    .swiper-pagination-bullet {
+        width: 8px;
+        height: 8px;
+        margin: 0 4px !important;
+    }
+}
+
+.offer1-1 {
+    width: 57%;
+    position: absolute;
+    top: 47.3%;
+    right: 0%;
+}
+
+.offer1-btn {
+    width: 92.3%;
+    position: absolute;
+    bottom: 22%;
+    left: 4%;
+}
+
+.offer2-1 {
+    width: 57%;
+    position: absolute;
+    top: 47.3%;
+    right: 0%;
+}
+
+.offer2-btn {
+    width: 92.3%;
+    position: absolute;
+    bottom: 23.5%;
+    left: 4%;
+}
+
+.offer3-1 {
+    width: 57%;
+    position: absolute;
+    top: 45%;
+    right: 0%;
+}
+
+.offer3-btn {
+    width: 92.3%;
+    position: absolute;
+    bottom: 21.5%;
+    left: 4%;
+}
+
+.offer4-1 {
+    width: 36.4%;
+    position: absolute;
+    top: 33.5%;
+    right: 5%;
+}
+
+.offer4-btn {
+    width: 92.3%;
+    position: absolute;
+    bottom: 22%;
+    left: 4%;
+}
+
+.phone {
+    width: 100%;
+    height: 5.7%;
+    position: absolute;
+    top: 68.5%;
+    left: 0%;
+}
+
+.mail {
+    width: 100%;
+    height: 4%;
+    position: absolute;
+    bottom: 14.5%;
+    left: 0%;
+}

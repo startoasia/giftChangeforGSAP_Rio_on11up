@@ -1,0 +1,125 @@
+/* 彈跳視窗 */
+
+.popUp__Btn {
+    cursor: pointer;
+}
+
+.popUp__Content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(0, 0, 0, 0.8);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+    /* cursor: pointer; */
+    overflow-y: scroll;
+}
+
+.popUp__Content .popUp__Innerbox {
+    width: 90%;
+    max-width: 700px;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.popUp__Content .popUp__Innerbox.type2 {
+    top: 0%;
+    transform: translateX(-50%);
+    margin-top: 7%;
+}
+
+.popUp__Content .popUp__Innerbox img {
+    width: 100%;
+    /* position: relative; */
+}
+
+.popUp__Content.popUp--active {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+}
+
+.closeBox {
+    position: fixed;
+    bottom: 100%;
+    right: 0%;
+    z-index: 99;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.closeBtn {
+    font-size: 50px;
+    transition: all 0.3s;
+}
+
+.closeBox:hover>.closeBtn {
+    transform: rotate(90deg);
+}
+
+
+/* 關閉按鈕顏色 */
+
+.closeBox1 {
+    /* background: #fff; */
+    color: #fff;
+}
+
+.closeBox1:hover {
+    /* background: #041D4E; */
+    color: #fff;
+}
+
+.closeBox2 {
+    /* background: #fff; */
+    color: #041D4E;
+}
+
+.closeBox2:hover {
+    /* background: #0c659e; */
+    color: #041D4E;
+}
+
+@media screen and (max-width: 576px) {
+    .popUp__Content .popUp__Innerbox.type2 {
+        top: 0%;
+        transform: translateX(-50%);
+        margin-top: 12%;
+    }
+
+    .closeBox {
+        width: 40px;
+        height: 40px;
+    }
+
+    .closeBtn {
+        font-size: 40px;
+    }
+}
+
+
+/* 開闔 */
+
+.collapse__Btn {
+    cursor: pointer;
+}
+
+.collapse__Content {
+    transition: max-height .3s;
+    max-height: 0;
+    overflow: hidden;
+}
